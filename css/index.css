@@ -174,12 +174,97 @@ img {
     margin: 0 5%;
   }
 }
+.page-loader {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  transition: opacity 0.5s ease-out;
+}
+.page-loader #loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 200;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #555555;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+.page-loader .side1 {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  height: 100%;
+  background: #D9716F;
+}
+.page-loader .side2 {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  height: 100%;
+  background: #D9716F;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeLeft {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes fadeRight {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: -50%;
+  }
+}
+.hiddenleft {
+  -webkit-animation: fadeLeft 5s ease-out;
+  animation: fadeLeft 5s ease-out;
+}
+.hiddenright {
+  -webkit-animation: fadeRight 5s ease-out;
+  animation: fadeRight 5s ease-out;
+}
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 .main-navigation {
   width: 100%;
   height: 90px;
   background: #FFFFFF;
   border-bottom: 2px dashed #C0C0C0;
-  position: fixed;
+  position: relative;
+  transition: all 400ms ease-in 0s;
 }
 .main-navigation .nav-container {
   height: 100%;
@@ -214,6 +299,12 @@ img {
   font-size: 1.6rem;
   color: #212529;
   text-decoration: none;
+}
+.fixed-nav {
+  height: 48px;
+  background: #FFFFFF;
+  position: fixed;
+  transition: all 200ms ease-in 0s;
 }
 .footer {
   width: 100%;

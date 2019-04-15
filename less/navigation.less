@@ -3,7 +3,8 @@
   height: 90px;
   background: @main-bg;
   border-bottom: 2px dashed @navigation-border;
-  position: fixed;
+  position: relative;
+  transition: all 400ms ease-in 0s;
 
   .nav-container {
     height: 100%;
@@ -32,8 +33,8 @@
         width: 100%;
         justify-content: space-around;
       }
-      
-      
+
+
       a {
         font-size: 1.6rem;
         color: @font-color;
@@ -42,3 +43,10 @@
     }
   }
 } // .main-navigation
+
+.fixed-nav {
+  height: 48px;
+  background: #FFFFFF;
+  position: fixed;
+  transition: all 200ms ease-in 0s;
+}
